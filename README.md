@@ -20,7 +20,7 @@ A core challenge in allowing users to upload and execute arbitrary code (like PH
 
 This project addresses this in the `execute_student_script.php` file by:
 
-1.  **Dynamic `open_basedir`:** Just before including the student's script, PHP's `open_basedir` configuration is dynamically set using `ini_set()`. This restricts *all* file system operations (like `fopen`, `file_get_contents`, `include`, `require`, etc.) performed by the included script *only* to the directories specified in the `open_basedir` value.
+1.  **Dynamic `open_basedir`:** Just before including the student's script, PHP's `open_basedir` configuration is dynamically set using `__set()`. This restricts *all* file system operations (like `fopen`, `file_get_contents`, `include`, `require`, etc.) performed by the included script *only* to the directories specified in the `open_basedir` value.
 2.  **Allowed Paths:** The `open_basedir` is specifically set to include:
     * The student's dedicated upload directory.
     * The PHP session save path.
