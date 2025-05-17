@@ -109,7 +109,7 @@ RewriteRule ^([a-zA-Z0-9_-]+)/(.+\.php)$ /execute_student_script.php?slug=$1&scr
         SetHandler application/x-httpd-php
     </FilesMatch>
     ```
-    *Replace `/path/to/your/student_site files_` and `/path/to/your/STUDENT_UPLOADS_BASE_PATH` with your actual paths.* Add this configuration snippet (or a more complete VirtualHost config) to an `apache-config-example.conf` file in your repository's root.
+    *Replace `/path/to/your/student_site files_` and `/path/to/your/STUDENT_UPLOADS_BASE_PATH` with your actual paths.* Add this configuration snippet (or a more complete VirtualHost config) to an `apache-config-example.conf` file in your repository's root or to the apache config file `usually httpd.conf`.
 
 6.  **Link CSS:** Ensure your `templates/header.php` includes a link to `css/style.css`. Add this line inside the `<head>` section:
     ```html
@@ -130,6 +130,7 @@ RewriteRule ^([a-zA-Z0-9_-]+)/(.+\.php)$ /execute_student_script.php?slug=$1&scr
 The URL structure for viewing/executing files will be `/student_files/{your-directory-slug}/{your-file-name}`.
 
 ## Project Structure (As Cloned)
+```bash
 student_site files_/ # Or your chosen directory name
 ├── config.php
 ├── css/
@@ -147,3 +148,4 @@ student_site files_/ # Or your chosen directory name
 │   └── header.php
 ├── upload.php
 └── README.md                  # (This file)
+'''
